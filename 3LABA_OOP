@@ -1,0 +1,64 @@
+
+public enum Policy
+{
+    Economic,
+    Culture,
+    Military
+}
+
+
+public class Person
+{
+    
+}
+
+
+public class Deputies
+{
+    public Person DeputyInfo { get; set; }
+    public string FullName { get; set; }
+    public double Rating { get; set; }
+
+    
+    public Deputies(Person person, string fullName, double rating)
+    {
+        DeputyInfo = person;
+        FullName = fullName;
+        Rating = rating;
+    }
+
+    public Deputies()
+    {
+        
+        DeputyInfo = new Person(); 
+        FullName = "Default Name";
+        Rating = 0.0;
+    }
+
+    
+    public override string ToString()
+    {
+        return $"Deputy Info: {DeputyInfo}, Full Name: {FullName}, Rating: {Rating}";
+    }
+}
+
+
+public class VerkhovnaRada
+{
+    private string AuthorityName;
+    private Policy ActivityType;
+    private DateTime ElectionDate;
+    private int EmployeesCount;
+    private Deputies[] DeputyList;
+
+    
+    public VerkhovnaRada(string authorityName, Policy activityType, DateTime electionDate, int employeesCount)
+    {
+        AuthorityName = authorityName;
+        ActivityType = activityType;
+        ElectionDate = electionDate;
+        EmployeesCount = employeesCount;
+        
+        DeputyList = new Deputies[10]; // 
+    }
+}
